@@ -2,7 +2,7 @@
 /**
  * Omakase Theme Customizer
  *
- * @package Omakase
+ * @package distinctinteriordesign
  */
 
 /**

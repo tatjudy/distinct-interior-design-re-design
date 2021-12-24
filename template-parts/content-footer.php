@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package omakase
+ * @package distinctinteriordesign
  */
 
 ?>
@@ -12,7 +12,6 @@
 <section>
     <div class="container footer-content">
         <div class="row">
-
             <?php
                 wp_nav_menu(
                     array(
@@ -21,11 +20,6 @@
                     )
                 );
             ?>
-
-            <div class="credits">
-                <p>Food Photography by Jessica Musslewhite of Mushrooms and Thyme Photography</p>
-                <p>Copyright &copy; <?php echo date("Y"); ?> AutoCanada. All Rights Reserved.</p>
-            </div>
         </div>
     </div>
 </section>

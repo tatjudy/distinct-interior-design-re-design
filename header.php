@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Omakase
+ * @package distinctinteriordesign
  */
 
 ?>
@@ -35,7 +35,9 @@
 	<header id="masthead" class="site-header">
 		<div class="nav-container">
 			<div class="site-branding flex-container" id="branding">
-				<!-- <h1><a href="<?php //echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php //bloginfo( 'name' ); ?></a></h1> -->
+				<a href="<?php //echo esc_url( home_url( '/' ) ); ?>" rel="home">
+					<img src="/distinct-interior-design/wp-content/uploads/2021/12/Distinct_Logo.png" alt="Distinct Interior Design Logo" />
+				</a>
 				<div class="menu-icon menu-toggle" aria-controls="primary-menu" aria-expanded="false">
 					<span></span>
 					<span></span>

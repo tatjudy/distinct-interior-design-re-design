@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package Omakase
+ * @package distinctinteriordesign
  */
 
 if ( ! function_exists( 'omakase_posted_on' ) ) :
