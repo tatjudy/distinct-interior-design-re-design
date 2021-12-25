@@ -22,7 +22,7 @@
 
 <!-- Banner Section -->
 <section>
-    <section class="banner" style="background-image: url('<?php echo $bkg_img['url']; ?>');">
+    <section class="banner bkg-img" style="background-image: url('<?php echo $bkg_img['url']; ?>');">
         <div class="banner-text">
             <h1><?php echo $banner_heading_text ?></h1>
             <p><?php echo $banner_paragraph_text ?></p>

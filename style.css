@@ -24,10 +24,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 
 /*--------------------------------------------------------------
-# Layouts
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
 
@@ -60,9 +56,19 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 /* Judy CSS */
 
+:root {
+	--gold: #B28534;
+	--black: #000000;
+	--white: #ffffff;
+}
+
 /* Global Styles */
 html {
 	scroll-behavior: smooth;
+}
+
+header {
+	background-color: var(--white);
 }
 
 img {
@@ -96,6 +102,24 @@ a:hover {
 	align-items: center;
 }
 
+.bkg-img {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+/* End Global Styles */
+
+/* Resetting styles */
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+a:visited {
+	color: initial;
+}
+
 /***** typography *****/
 
 /***** FONT FAMILIES *****/
@@ -118,27 +142,45 @@ body {
 	font-size: 1.6rem;
 }
 
+p {
+	font-size: 1.6rem;
+}
+
 /* Navigation Styles */
 .menu-icon {
-	padding: 1.5rem;
 	cursor: pointer;
 	z-index: 1;
 }
 
 .menu-icon {
-	position: absolute;
-	right: 0;
+	position: relative;
+	padding: 1.5rem;
 }
 
 header .menu-icon span {
 	display: block;
+	position: relative;
 	width: 4rem;
 	height: 0.3rem;
-	margin-bottom: 0.5rem;
-	position: relative;
+	margin-bottom: 0.8rem;
 	cursor: pointer;
-	background-color: #B28534;
+	background-color: var(--gold);
 	border-radius: 0.3rem;
+	transition: 0.25s ease-in-out;
+}
+
+/* remove middle span */
+header .menu-icon.close-menu span:nth-child(2) {
+	display: none;
+}
+
+header .menu-icon.close-menu span:nth-child(1) {
+	margin-bottom: 0;
+	transform: rotate(45deg) translateY(0.15rem);
+}
+
+header .menu-icon.close-menu span:last-child {
+	transform: rotate(-45deg) translateY(-0.15rem);
 }
 
 /* toggle menu */
@@ -150,24 +192,154 @@ header .menu-icon span {
 	transition: max-height .5s ease-out;
 }
 
-.nav-container {
-	padding: 0 1rem;
-}
-
 .main-navigation.toggled {
 	max-height: 50rem;
 }
 
+.site-branding {
+	padding: 0 1rem;
+}
+
 .site-branding.flex-container {
 	display: flex;
+	justify-content: space-between;
 }
 
 .site-branding img {
 	max-width: 70%;
 }
 
+header .menu {
+	width: 100vw;
+	padding: 5rem 0;
+	background-color:var(--white);
+	height: inherit;
+}
+
+header .menu li a {
+	display: block;
+	width: 90vw;
+	margin: 0 auto;
+	color: var(--black);
+	padding: 1.5rem;
+	transition: ease-in-out 0.3s;
+	border-bottom: 0.1rem solid var(--gold);
+	letter-spacing: 0.3rem;
+}
+
+/* HOME */
+
+/* Homepage banner styles */
+
+.banner-text {
+	background-color: rgba(0,0,0,0.3);
+	color: var(--white);
+	padding: 150px 30px;
+}
+
+/* END HOME STYLES */
 @media only screen and (min-width: 475px) {
 	.site-branding img {
 		max-width: 90%;
+	}
+}
+
+@media only screen and (min-width: 700px) {
+	.banner-text {
+		background-color: rgba(0,0,0,0.5);
+		width: calc(100vw - 50px);
+		padding: 20px 30px 20px 50px;
+	}
+	.banner {
+		height: 60vh;
+		padding-top: 30%;
+	}
+
+}
+
+@media only screen and (min-width: 800px) {
+	.banner-text {
+		width: calc(100vw - 100px);
+	}
+}
+
+@media only screen and (min-width: 1022px) {
+	.banner {
+		height: 80vh;
+	}
+}
+
+@media only screen and (min-width: 1195px) {
+	.menu-icon {
+		display: none;
+	}
+	.nav-container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1rem;
+	}
+	.main-navigation {
+		position: initial;
+		max-height: initial;
+		display: initial;
+	}
+	header .menu {
+		width: initial;
+		padding: initial;
+		display: flex;
+	}
+	.menu li {
+		margin: 0 1rem;
+		position: relative;
+	}
+	header .menu li a {
+		width: initial;
+		border-bottom: none;
+		padding: 1rem;
+		color: var(--gold);
+		text-transform: uppercase;
+	}
+	header .menu li:hover a:after {
+		content: '';
+		position: absolute;
+		bottom: 0.8rem;
+		width: 90%;
+		color: var(--gold);
+		border-bottom: 0.1rem solid var(--gold);
+		margin: 0 auto;
+		left: 0;
+		right: 0;
+	}
+	.current-menu-item a {
+		font-weight: bold;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.banner {
+		height: calc(100vh - 10rem);
+	}
+	.banner h1 {
+		font-size: 5.4rem;
+	}
+	.banner p {
+		font-size: 2.4rem;
+	}
+}
+
+@media only screen and (min-width: 1400px) {
+	.banner {
+		padding-top: 25%;
+	}
+	.banner-text {
+		width: 120rem;
+		padding: 5rem 10rem;
+	}
+}
+
+@media only screen and (min-width: 1500px) {
+	.banner {
+		padding-top: 300px;
 	}
 }
