@@ -35,9 +35,17 @@
 	<header id="masthead" class="site-header">
 		<div class="nav-container">
 			<div class="site-branding flex-container" id="branding">
-				<a href="<?php //echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<img src="/distinct-interior-design/wp-content/uploads/2021/12/Distinct_Logo.png" alt="Distinct Interior Design Logo" />
-				</a>
+				<?php
+				// Display the Custom Logo
+				the_custom_logo();
+
+				// No Custom Logo, just display the site's name
+				if (!has_custom_logo()) {
+					?>
+					<h1><?php bloginfo('Distinct Interior Design'); ?></h1>
+					<?php
+				}
+				?>
 				<div class="menu-icon menu-toggle" aria-controls="primary-menu" aria-expanded="false">
 					<span></span>
 					<span></span>
