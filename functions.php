@@ -225,7 +225,58 @@ add_theme_support('custom-logo', array(
     'size' => 'distinctinteriordesign-logo'
 ));
 
+// limit image sizes to 200kb to optimize website loading time
+function whero_limit_image_size($file) {
+
+	// Calculate the image size in KB
+	$image_size = $file['size']/1024;
+
+	// File size limit in KB
+	$limit = 200;
+
+	// Check if it's an image
+	$is_image = strpos($file['type'], 'image');
+
+	if ( ( $image_size > $limit ) && ($is_image !== false) )
+        	$file['error'] = 'Your picture is too large. It has to be smaller than '. $limit .'KB';
+
+	return $file;
+
+}
+add_filter('wp_handle_upload_prefilter', 'whero_limit_image_size');
+
 // remove auto p tags 
 
 remove_filter( 'the_content', 'wpautop' );
 remove_filter( 'the_excerpt', 'wpautop' );
+
+function custom_post_type() {
+	$args = array(
+		'labels' => array(
+			'name' => 'Projects',
+			'singular_name' => 'Project',
+		),
+		'hierarchical' => true,
+		'public' => true,
+		'has_archive' => true,
+		'menu_icon' => 'dashicons-portfolio',
+		'supports' => array('title', 'editor', 'thumbnail'),
+	);
+
+	register_post_type('projects', $args);
+}
+
+add_action('init', 'custom_post_type');
+
+function cpt_settings() {
+	acf_add_options_sub_page(array (
+		'page_title' => 'Projects Settings',
+		'parent_slug' => 'edit.php?post_type=projects',
+		'capability' => 'manage_options',
+	));
+}
+
+add_action('init', 'cpt_settings');
+
+//featured image
+add_theme_support( 'post-thumbnails' );

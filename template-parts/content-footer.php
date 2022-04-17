@@ -21,7 +21,7 @@
 
 <!-- Footer Content -->
 <section class="footer-content">
-    <div class="flex-container">
+    <div class="grid-container">
         <div class="contact-info">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
                 <img src="/distinct-interior-design/wp-content/uploads/2021/12/black-logo.png" alt="Distinct Interior Design Logo">

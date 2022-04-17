@@ -31,6 +31,10 @@
     $sec2_img = get_field('section_2_img');
     $sec2_feat_img = get_field('section_2_feat_img');
 
+    //service section
+    $service_section = get_field('service_section');
+    $services_page_heading = get_field('services_page_heading');
+
     $video = get_field('video');
 ?>
 
@@ -47,7 +51,7 @@
 <main>
     <!-- Section 1 - Intro Section -->
     <section class="sec1 intro content-cont">
-        <div class="flex-container">
+        <div class="grid-container">
             <!-- Text -->
             <div class="sec1-text">
                 <h2><span class="gold"><?php echo $sec1_gold; ?></span> <?php echo $sec1_heading_txt; ?></h2>
@@ -60,9 +64,9 @@
             </div>
             <!-- Images -->
             <div class="sec1-img">
-                <img src="<?php echo $sec1_img1['url']; ?>" alt="">
-                <img src="<?php echo $sec1_img2['url']; ?>" alt="">
-                <img src="<?php echo $sec1_img3['url']; ?>" alt="">
+                <img class="feat-img" src="<?php echo $sec1_img1['url']; ?>" alt="<?php echo $sec1_img1['alt']; ?>">
+                <img class="feat-img" src="<?php echo $sec1_img2['url']; ?>" alt="<?php echo $sec1_img2['alt']; ?>">
+                <img class="feat-img" src="<?php echo $sec1_img3['url']; ?>" alt="<?php echo $sec1_img3['alt']; ?>">
             </div>
         </div>
     </section>
@@ -76,8 +80,8 @@
     </section>
     <!-- Section 2 - About Section -->
     <section class="sec2 about-home">
-        <div class="flex-container">
-            <div class="sec2-text half-width">
+        <div class="grid-container">
+            <div class="sec2-text">
                 <div class="sec2-text-cont">
                     <h2 class="gold"><?php echo $sec2_heading; ?></h2>
                     <p><?php echo $sec2_paragraph; ?></p>
@@ -100,91 +104,33 @@
         </div>
     </section>
     <!-- Services Section -->
-    <section class="sec3 services-home content-cont">
-        <h2>Our Services</h2>
-        <div class="grid-container">
-            <div class="service" >
-                <div class="bkg-img" style="background-image: url('/distinct-interior-design/wp-content/uploads/2021/12/services-colour-consultations.jpg');">
-                    <div class="services-heading-cont">
-                        <h3>Colour Consultations</h3>
-                    </div>  
-                </div>
-                <div class="services-heading-mobile">
-                    <h3>Colour Consultations</h3>
-                </div>  
+    <?php if (get_field('service_section') == 'Yes') {?>
+        <section class="sec3 services-home content-cont">
+            <h2><?php echo $services_page_heading; ?></h2>
+            <div class="grid-container">
+            <?php
+            if( have_rows('services') ):
+                while( have_rows('services') ) : the_row(); 
+                $service_title = get_sub_field('service_title');
+                $service_image = get_sub_field('service_image');?>
+                    <div class="service">
+                        <div class="bkg-img" style="background-image: url('<?php echo $service_image['url']; ?>');">
+                            <div class="services-heading-cont">
+                                <h3><?php echo $service_title; ?></h3>
+                            </div>  
+                        </div>
+                        <div class="services-heading-mobile">
+                            <h3><?php echo $service_title; ?></h3>
+                        </div>  
+                    </div>
+                <?php endwhile;
+            else :
+                // Do something...
+            endif;
+            ?>
             </div>
-            <div class="service">
-                <div class="bkg-img" style="background-image: url('/distinct-interior-design/wp-content/uploads/2021/12/services-furnishing-and-decorating.jpg');">
-                    <div class="services-heading-cont">
-                        <h3>Furnishing & Decorating</h3>
-                    </div>  
-                </div>
-                <div class="services-heading-mobile">
-                    <h3>Furnishing & Decorating</h3>
-                </div>  
-            </div>
-            <div class="service">
-                <div class="bkg-img" style="background-image: url('/distinct-interior-design/wp-content/uploads/2021/12/services-kitchen-and-bath-renovations.jpg');">
-                    <div class="services-heading-cont">
-                        <h3>Kitchen & Bath Renovations</h3>
-                    </div>    
-                 </div>
-                 <div class="services-heading-mobile">
-                    <h3>Kitchen & Bath Renovations</h3>
-                </div>  
-            </div>
-            <div class="service">
-                <div class="bkg-img" style="background-image: url('/distinct-interior-design/wp-content/uploads/2021/12/services-custom-draperies.jpg');">
-                    <div class="services-heading-cont">
-                        <h3>Custom Draperies</h3>
-                    </div>   
-                </div>
-                <div class="services-heading-mobile">
-                    <h3>Custom Draperies</h3>
-                </div> 
-            </div>
-            <div class="service">
-                <div class="bkg-img" style="background-image: url('/distinct-interior-design/wp-content/uploads/2021/12/services-space-planning.jpg');">
-                    <div class="services-heading-cont">
-                        <h3>Space Planning</h3>
-                    </div>   
-                </div>
-                <div class="services-heading-mobile">
-                    <h3>Space Planning</h3>
-                </div>   
-            </div>
-            <div class="service">
-                <div class="bkg-img" style="background-image: url('/distinct-interior-design/wp-content/uploads/2021/12/services-3d-rendering.jpg');">
-                    <div class="services-heading-cont">
-                        <h3>3D Renderings</h3>
-                    </div> 
-                </div>
-                <div class="services-heading-mobile">
-                    <h3>3D Renderings</h3>
-                </div> 
-            </div>
-            <div class="service">
-                <div class="bkg-img" style="background-image: url('/distinct-interior-design/wp-content/uploads/2021/12/services-home-staging.jpg');">
-                    <div class="services-heading-cont">
-                        <h3>Home Staging</h3>
-                    </div>   
-                </div>
-                <div class="services-heading-mobile">
-                    <h3>Home Staging</h3>
-                </div>  
-            </div>
-            <div class="service">
-                <div class="bkg-img" style="background-image: url('/distinct-interior-design/wp-content/uploads/2021/12/services-lighting.jpg');">
-                    <div class="services-heading-cont">
-                        <h3>Lighting</h3>
-                    </div>      
-                </div>
-                <div class="services-heading-mobile">
-                    <h3>Lighting</h3>
-                </div>   
-            </div>
-        </div>
-    </section>
+        </section>
+    <?php } //end if?>
     <!-- Video Section -->
     <?php
         if (!empty($video)):?>
@@ -194,6 +140,8 @@
                 </div>
             </section>
         <?php endif; ?>
+
+    <?php the_content(); ?>
 </main>
 
 
