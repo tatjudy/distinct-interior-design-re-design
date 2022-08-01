@@ -10,7 +10,7 @@ get_header();
 
 <?php
 // variables
-    $page_title = get_field('page_title');
+    $about_heading = get_field('about_heading');
 
     $award_heading_gold = get_field('award_heading_gold');
     $award_heading = get_field('award_heading');
@@ -27,7 +27,7 @@ get_header();
     <section class="page-template-banner content-cont">
         <div class="page-title-bkg">
             <div class="page-title-wrapper lightgold">
-                <h1><?php echo $page_title; ?></h1>
+                <h1><?php echo $about_heading; ?></h1>
             </div>
         </div>
         <div class="img-feat-container grid-container">
@@ -107,4 +107,4 @@ get_header();
 </main>
 
 <?php
-get_footer();
+get_footer();`

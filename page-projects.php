@@ -2,18 +2,20 @@
 /*
 Template Name: Projects
 Template Post Type: page
+
+Page is obsolete. Use archive-projects.
 */
 
 
 get_header();
 
-    $heading = get_field('heading');
+    $projects_heading = get_field('projects_heading');
 ?>
 <main>
     <section class="page-template-banner">
         <div class="page-title-bkg">
             <div class="page-title-wrapper lightgold">
-                <h1><?php echo $heading; ?></h1>
+                <h1><?php echo $projects_heading; ?></h1>
             </div>
         </div>
         <div class="img-feat-container grid-container">

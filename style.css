@@ -78,6 +78,11 @@ header {
 	background-color: var(--white);
 }
 
+main {
+	max-width: 2000px;
+	margin: 0 auto;
+}
+
 img {
 	display: block;
 	width: 100%;
@@ -163,6 +168,16 @@ p:empty {
 	height: initial;
 }
 
+/* Next/Prev Project Buttons */
+.posts-navigation .nav-links a {
+	display: block;
+	width: fit-content;
+	margin: 0 auto;
+	padding: 15px 20px;
+	background-color: var(--dk_text_gold);
+	color: #fff;
+}
+
 /* CTA Button */
 .cta-btn {
 	text-transform: uppercase;
@@ -228,7 +243,10 @@ a {
 .cta-link,
 .cta-btn,
 .recent-projects h2,
-.services-home h2 {
+.services-home h2,
+.our-process-page h3,
+.contact-us-page .content-cont > h2,
+.contact-us-page h3 {
 	font-family: 'Montserrat', sans-serif;
 }
 
@@ -248,6 +266,7 @@ p {
 /**** FONT SIZES *****/
 body {
 	font-size: 62.7%;
+	color: #333333
 }
 
 .copyright {
@@ -506,6 +525,14 @@ header .menu li a {
 	height: 100%; 
 }
 
+.instagram-feed-container {
+	width: 90%;
+	max-width: 120rem;
+	margin: 0 auto;
+}
+
+/* END HOME STYLES */
+
 /* --------------------------- 
 FEATURED IMAGE BANNER TEMPLATE
 ----------------------------*/
@@ -557,7 +584,7 @@ END FEATURED IMAGE BANNER TEMPLATE
 PROJECTS PAGE
 ----------------------------*/
 .projects-container {
-	margin: 0 20px;
+	margin: 0 2rem;
 }
 
 .project-title-bkg {
@@ -699,6 +726,133 @@ footer img {
 
 /* END ABOUT PAGE */
 
+/* OUR PROCESS PAGE */
+.process-container,
+.our-process-intro {
+	width: 90%;
+	max-width: 164rem;
+	margin: 0 auto;
+}
+
+.our-process-intro-text {
+	text-align: center;
+	width: 90%;
+	max-width: 1000px;
+	margin: 10px auto 50px;
+}
+
+.our-process-intro-img {
+	max-width: 40rem;
+	margin: 0 auto;
+}
+
+.design-process {
+	width: 90%;
+	margin: 0 auto 5rem;
+}
+
+.design-process h3 {
+	margin: 3.5rem 0 1rem;
+}
+
+.process-container img {
+	max-width: fit-content;
+	margin: 3rem auto;
+}
+
+/* Book Consultation Form */
+.our-process-page .form {
+	width: 90%;
+	max-width: 60rem;
+	margin: 5rem auto 0;
+}
+
+.our-process-page .form h2 {
+	text-align: center;
+}
+
+/* END OUR PROCESS PAGE */
+
+/* CONTACT US PAGE */
+.fw-banner {
+	height: 30vh;
+	display: flex;
+	align-items: center;
+}
+
+.fw-banner-text {
+	background-color: rgba(0,0,0,0.4);
+	padding: 3rem 2rem;
+}
+.fw-banner-text h1 {
+	color: #fff;
+	margin: 0;
+}
+
+.contact-us-page .content-cont {
+	margin-top: 5rem;
+}
+
+.contact-us-page .content-cont > h2 {
+	text-align: center;
+	font-weight: 300;
+}
+
+.contact-us-page .content-cont {
+	width: 90%;
+	max-width: 1500px;
+	margin: 0 auto;
+}
+
+.contact-us-page .grid-container {
+	display: flex;
+	flex-direction: column-reverse;
+	max-width: 1200px;
+	margin: 50px auto 0;
+}
+
+.contact-right {
+	margin-bottom: 10px;
+	padding-bottom: 30px;
+	border-bottom: 1px solid #e4e4e4;
+}
+
+.contact-right-wrapper {
+	text-align: center;
+}
+
+.contact-right img {
+	height: auto;
+	margin: 50px auto 0;
+	max-width: 300px;
+}
+
+.contact-pg-details a {
+	display: block;
+	transition: 0.3s ease-in-out;
+}
+
+.contact-pg-details a:hover,
+.contact-pg-details a:visited {
+	color: var(--dk_text_gold);
+}
+
+.contact-left h3 {
+	font-size: 26px;
+}
+
+/* END CONTACT US PAGE */
+
+/* Single Projects */
+article {
+	margin-top: 50px;
+}
+
+article h1 {
+	text-align: center;
+}
+/* End Single Projects */
+
 /* Footer menu */
 .foot-menu {
 	display: flex;
@@ -748,7 +902,39 @@ footer .current-menu-item a {
 }
 /* End Footer */
 
-/* END HOME STYLES */
+/* Forms */
+.wpforms-container.wpforms-container-full {
+	width: 100%;
+}
+
+/* Book Consultation Form */
+#wpforms-322 input {
+	max-width: 100%;
+}
+
+#wpforms-322 label {
+	color: #505050;
+}
+
+#wpforms-322 button {
+	display: block;
+	width: 17rem;
+	margin: 0 auto;
+	padding: 1rem 3rem;
+	font-size: 1.8rem;
+	text-align: left;
+	letter-spacing: 0.05rem;
+	background-color: #4681f4;
+	color: #fff;
+}
+#wpforms-322 button span {
+	font-family: 'FontAwesome';
+	transition: 0.3s ease-in-out;
+}
+
+#wpforms-322 button:hover span {
+	margin-left: 5px;
+}
 
 @media only screen and (min-width: 410px) {
 	/* About Page */
@@ -776,6 +962,11 @@ footer .current-menu-item a {
 		max-width: 10rem;
 	}
 	/* End About Page */
+	/* CONTACT US PAGE */ 
+	.fw-banner {
+		height: 40vh;
+	}
+	/* END CONTACT US PAGE */
 }
 
 @media only screen and (min-width: 600px) {
@@ -840,9 +1031,13 @@ footer .current-menu-item a {
 		margin: 10rem 5rem;
 	}
 	/* End About Page */
+	/* Feature Banner Template */
+	.page-title-wrapper h1 {
+		font-size: 4.8rem;
+	}
 }
 
-@media only screen and (min-width: 69rem) {
+@media only screen and (min-width: 690px) {
 	/* Home Section 1 */
 	.sec1-img {
 		max-width: 70rem;
@@ -864,6 +1059,25 @@ footer .current-menu-item a {
 		height: 40rem;
 	}
 	/* End Home Section 2 */
+	/* Contact Us Page */
+	.contact-right {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		align-items: center;
+		justify-content: space-between;
+	}
+	.contact-right img {
+		margin: 0 auto;
+	}
+	/* End Contact Us Page */
+}
+
+@media only screen and (min-width: 750px) {
+	/* CONTACT US PAGE */ 
+	.fw-banner {
+		height: 50vh;
+	}
+	/* END CONTACT US PAGE */
 }
 
 @media only screen and (min-width: 800px) {
@@ -896,6 +1110,13 @@ footer .current-menu-item a {
 		text-align: left;
 		margin-left: 1rem;
 	}
+	/* End Home Services */
+
+	/* Contact Us Page */
+	.fw-banner-text h1 {
+		margin-left: 3rem;
+	}
+	/* End Contact Us Page */
 }
 
 @media only screen and (min-width: 900px) {
@@ -919,6 +1140,27 @@ footer .current-menu-item a {
 	.about-sec p {
 		margin: 10rem auto;
 	}
+	/* Contact Us Page */
+	.contact-us-page .grid-container {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 50px;
+	}
+	.contact-right {
+		display: block;
+		grid-template-columns: none;
+		border: none;
+		margin: initial;
+		padding: initial;
+	}
+	.contact-right-wrapper {
+		text-align: left;
+	}
+	.contact-right img {
+		max-width: initial;
+		margin: 50px 0 0 0;
+	}
+	/* End Contact Us Page */	
 }
 
 @media only screen and (min-width: 980px) {
@@ -1018,13 +1260,14 @@ footer .current-menu-item a {
 		margin-bottom: 10rem;
 		background-color: var(--black);
 	}
-	.page-title-wrapper h1 {
-		font-size: 4.8rem;
-	}
 	.img-feat-container img:nth-of-type(even) {
 		margin-top: 10rem;
 	}
-
+	/* CONTACT US PAGE */ 
+	.fw-banner {
+		height: 60vh;
+	}
+	/* END CONTACT US PAGE */
 }
 
 @media only screen and (min-width: 1022px) {
@@ -1193,6 +1436,40 @@ footer .current-menu-item a {
 		line-height: 4rem;
 	}
 	/* End About Page */
+	/* Design Process Page */
+	.process-container {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		align-items: center;
+		grid-gap: 50px;
+	}
+	.design-process {
+		width: 100%;
+	}
+	.design-process-images img:first-of-type {
+		margin-bottom: 100px;
+	}
+	.our-process-page .form {
+		margin: 0 auto;
+	}
+	/* End Design Process Page */
+	/* CONTACT US PAGE */ 
+	.fw-banner {
+		height: 80vh;
+	}
+	/* END CONTACT US PAGE */
+	/* Contact Us Page */
+	.fw-banner-text {
+		padding: 3rem 10rem 3rem 0;
+	}
+	.fw-banner-text h1 {
+		font-size: 4.8rem;
+		margin-left: 5rem;
+	}
+	.contact-us-page .grid-container {
+		grid-gap: 100px;
+	}
+	/* End Contact Us Page */
 }
 
 @media only screen and (min-width: 1242px) {

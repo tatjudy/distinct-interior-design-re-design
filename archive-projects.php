@@ -9,7 +9,7 @@
 
 get_header();
 
-$heading = get_field('heading', 'option');
+$projects_heading = get_field('projects_heading', 'option');
 ?>
 
 <main id="primary" class="site-main">
@@ -17,8 +17,8 @@ $heading = get_field('heading', 'option');
         <div class="page-title-bkg">
             <div class="page-title-wrapper lightgold">
             <?php
-                if(get_field('heading', 'option')) {?>
-                <h1><?php echo $heading; ?></h1>
+                if(get_field('projects_heading', 'option')) {?>
+                <h1><?php echo $projects_heading; ?></h1>
             <?php } ?>
             </div>
         </div>
