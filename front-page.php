@@ -74,7 +74,22 @@
     <section class="recent-projects content-cont">
         <h2>Recent Projects</h2>
         <div class="flex-container">
-
+            <ul>
+                <?php
+                    $the_query = new WP_Query('posts_per_page=3');
+                    while ($the_query -> have_posts()) : $the_query -> the_post();
+                ?>
+                <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+                <li>
+                    <?php
+                        the_excerpt(__('(more...)'));
+                    ?>
+                </li>
+                <?php
+                    endwhile;
+                    wp_reset_postdata();
+                ?>
+            </ul>
         </div>
         <a href="/projects/" class="cta-btn">View All</a>
     </section>
