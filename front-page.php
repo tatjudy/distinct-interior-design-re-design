@@ -74,21 +74,22 @@
     <section class="recent-projects content-cont">
         <h2>Recent Projects</h2>
         <div class="flex-container">
-        <?php if ( have_posts() ) : 
-        $the_query = new WP_Query('posts_per_page=3');
-                /* Start the Loop */
-                while ($the_query -> have_posts()) : $the_query -> the_post() :
-                    the_post();
-                    get_template_part( 'template-parts/content', get_post_type() );
-                    
-                endwhile;
+        <?php
+            $new_loop = new WP_Query( array(
+            'post_type' => 'Projects',
+                'posts_per_page' => 3 // put number of posts that you'd like to display
+            ) );
+        ?>
 
-                else :
+        <?php if ( $new_loop->have_posts() ) : ?>
+            <?php while ( $new_loop->have_posts() ) : $new_loop->the_post(); ?>
 
-                get_template_part( 'template-parts/content', 'none' );
+                <h2><?php the_title(); ?></h2>
 
-                endif;
-            ?>
+            <?php endwhile;?>
+        <?php else: ?>
+        <?php endif; ?>
+        <?php wp_reset_query(); ?>
         </div>
         <a href="/projects/" class="cta-btn">View All</a>
     </section>
