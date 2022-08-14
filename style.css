@@ -28,10 +28,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 --------------------------------------------------------------*/
 
 .site-main .comment-navigation,
-.site-main
-.posts-navigation,
-.site-main
-.post-navigation {
+.site-main .posts-navigation,
+.site-main .post-navigation {
 	margin: 0 0 1.5em;
 }
 
@@ -64,7 +62,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	--white: #ffffff;
 }
 
-/* Global Styles */
+/*----------------------------
+	Global Styles
+----------------------------*/
 html {
 	scroll-behavior: smooth;
 }
@@ -87,6 +87,18 @@ img {
 	display: block;
 	width: 100%;
 	height: 100%;
+}
+
+body>div#page {
+	position: relative;
+}
+
+header.site-header {
+	position: sticky;
+	width: 100%;
+	top: 0;
+	z-index: 1;
+	border-bottom: 1px solid #e5e5e5;
 }
 
 .menu li {
@@ -199,7 +211,13 @@ p:empty {
 	transform: translateY(-1rem);
 }
 
-/* End Global Styles */
+.cta-btn:visited {
+	color: var(--gold);
+}
+
+/*----------------------------
+	End Global Styles
+----------------------------*/
 
 /* Shared styles *
 .post-type-archive-projects main {
@@ -207,7 +225,9 @@ p:empty {
 }
 /* End shared styles */
 
-/* Resetting styles */
+/*----------------------------
+	Resetting Styles
+----------------------------*/
 ul {
 	margin: 0;
 	padding: 0;
@@ -226,7 +246,9 @@ main section h2 {
 	margin-bottom: 2rem;
 }
 
-/***** typography *****/
+/*----------------------------
+	Typography
+----------------------------*/
 
 h1,
 h2,
@@ -234,7 +256,7 @@ h3,
 h4,
 p,
 a {
-	caret-color: rgba(0,0,0,0);
+	caret-color: rgba(0, 0, 0, 0);
 }
 
 /***** FONT FAMILIES *****/
@@ -245,7 +267,7 @@ a {
 .recent-projects h2,
 .services-home h2,
 .our-process-page h3,
-.contact-us-page .content-cont > h2,
+.contact-us-page .content-cont>h2,
 .contact-us-page h3 {
 	font-family: 'Montserrat', sans-serif;
 }
@@ -291,7 +313,13 @@ footer .contact-info a {
 	font-size: 2rem;
 }
 
-/* Navigation Styles */
+.project-title-wrapper h3 {
+	font-size: 3rem;
+}
+
+/*----------------------------
+	Navigation Styles
+----------------------------*/
 .menu-icon {
 	cursor: pointer;
 	z-index: 1;
@@ -367,7 +395,7 @@ header .menu-icon.close-menu span:last-child {
 header .menu {
 	width: 100vw;
 	padding: 5rem 0;
-	background-color:var(--white);
+	background-color: var(--white);
 	height: inherit;
 }
 
@@ -382,18 +410,21 @@ header .menu li a {
 	letter-spacing: 0.3rem;
 }
 
-/* HOME */
+/*----------------------------
+	Home Page Styles
+----------------------------*/
 
 /* Homepage banner styles */
 
 .banner-text {
-	background-color: rgba(0,0,0,0.3);
+	background-color: rgba(0, 0, 0, 0.3);
 	color: var(--white);
 	padding: 15rem 3rem;
 }
 
 /* Section 1 */
 .content-cont {
+	width: 90%;
 	max-width: 164rem;
 	margin: 5rem auto;
 }
@@ -413,12 +444,46 @@ header .menu li a {
 	justify-content: space-around;
 	margin-top: 5rem;
 }
+
 /* End Section 1 */
 
-/* Projects */ 
+/* Projects */
 .recent-projects h2 {
 	text-transform: uppercase;
 }
+
+.recent-projects .feature-image {
+	padding: 5% 0;
+}
+
+.recent-projects .feature-link {
+	margin: 30px auto;
+}
+
+.recent-projects .project-title-bkg {
+	max-width: 30rem;
+	height: 25rem;
+	line-height: 25rem;
+	opacity: 0;
+}
+
+.recent-projects .feature-image:hover .project-title-bkg {
+	opacity: 1;
+}
+
+.recent-projects .project-title-wrapper {
+	max-width: 27rem;
+	height: 22.5rem;
+	line-height: 22.5rem;
+}
+
+.recent-projects .cta-btn {
+	font-size: 16px;
+	font-weight: 100;
+	letter-spacing: 1px;
+	margin-top: 20px;
+}
+
 /* End Projects */
 
 
@@ -432,6 +497,7 @@ header .menu li a {
 .about-home .sec2-img {
 	order: 1;
 }
+
 .about-home .sec2-text {
 	order: 2;
 }
@@ -487,7 +553,7 @@ header .menu li a {
 	color: var(--dk_text_gold);
 	margin: 0;
 	font-size: 2rem;
-	text-align:center;
+	text-align: center;
 }
 
 /* hide on mobile */
@@ -507,22 +573,22 @@ header .menu li a {
 	max-width: 120rem;
 }
 
-.video-container { 
-	position: relative; 
-	padding-bottom: 56.25%; 
-	height: 0; 
-	overflow: hidden; 
-	max-width: 100%; 
-} 
+.video-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+	max-width: 100%;
+}
 
-.video-container iframe, 
-.video-container object, 
-.video-container embed { 
-	position: absolute; 
-	top: 0; 
-	left: 0; 
-	width: 100%; 
-	height: 100%; 
+.video-container iframe,
+.video-container object,
+.video-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
 .instagram-feed-container {
@@ -531,7 +597,9 @@ header .menu li a {
 	margin: 0 auto;
 }
 
-/* END HOME STYLES */
+/*----------------------------
+	End Home Styles
+----------------------------*/
 
 /* --------------------------- 
 FEATURED IMAGE BANNER TEMPLATE
@@ -541,8 +609,8 @@ FEATURED IMAGE BANNER TEMPLATE
 }
 
 .page-template-banner .img-feat-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
 }
 
 .page-title-bkg {
@@ -557,7 +625,7 @@ FEATURED IMAGE BANNER TEMPLATE
 	height: 20rem;
 	line-height: 20rem;
 	text-align: center;
-	background-color: rgba(0,0,0,0.8);
+	background-color: rgba(0, 0, 0, 0.8);
 }
 
 .page-title-wrapper {
@@ -569,7 +637,7 @@ FEATURED IMAGE BANNER TEMPLATE
 	border: 0.3rem solid var(--dk_text_gold);
 }
 
-.page-title-wrapper > h1 {
+.page-title-wrapper>h1 {
 	display: inline-block;
 	vertical-align: middle;
 	line-height: normal;
@@ -589,12 +657,12 @@ PROJECTS PAGE
 
 .project-title-bkg {
 	width: 90%;
-	height: 29rem;
 	max-width: 37.5rem;
+	height: 29rem;
 	line-height: 29rem;
 	margin: 0 auto;
 	text-align: center;
-	background-color: rgba(0,0,0,0.75);
+	background-color: rgba(0, 0, 0, 0.75);
 	transition: all 1s ease-in-out;
 }
 
@@ -602,13 +670,14 @@ PROJECTS PAGE
 	display: inline-block;
 	vertical-align: middle;
 	width: 90%;
-	height: 26.1rem;
 	max-width: 33.75rem;
+	height: 26.1rem;
 	line-height: 26.1rem;
 	border: 0.3rem solid var(--lightgold);
 }
 
-.project-title-wrapper h2 {
+.project-title-wrapper h2,
+.project-title-wrapper h3 {
 	display: inline-block;
 	vertical-align: middle;
 	margin: 0 0.6rem;
@@ -622,7 +691,7 @@ PROJECTS PAGE
 }
 
 .feature-link:hover .project-title-bkg {
-    background: rgba(0,0,0,1);
+	background: rgba(0, 0, 0, 1);
 }
 
 .feature-image {
@@ -667,9 +736,13 @@ footer img {
 	color: var(--white);
 }
 
-/* END HOME PAGE */
+/*----------------------------
+	End Home Page
+----------------------------*/
 
-/* ABOUT PAGE TEMPLATE */
+/*----------------------------
+	About Page Template
+----------------------------*/
 /* Feat Images */
 .page-img-feat {
 	display: none;
@@ -716,17 +789,22 @@ footer img {
 .about-sec .half-width.bkg-img {
 	height: 60rem;
 }
+
 .about-page section {
 	margin: 0 auto;
 }
 
-.about-page + footer {
+.about-page+footer {
 	margin: 0;
 }
 
-/* END ABOUT PAGE */
+/*----------------------------
+	End About Page
+----------------------------*/
 
-/* OUR PROCESS PAGE */
+/*----------------------------
+	Our Process Page
+----------------------------*/
 .process-container,
 .our-process-intro {
 	width: 90%;
@@ -771,9 +849,13 @@ footer img {
 	text-align: center;
 }
 
-/* END OUR PROCESS PAGE */
+/*----------------------------
+	End Our Process Page
+----------------------------*/
 
-/* CONTACT US PAGE */
+/*----------------------------
+	Contact Us Page
+----------------------------*/
 .fw-banner {
 	height: 30vh;
 	display: flex;
@@ -781,9 +863,10 @@ footer img {
 }
 
 .fw-banner-text {
-	background-color: rgba(0,0,0,0.4);
+	background-color: rgba(0, 0, 0, 0.4);
 	padding: 3rem 2rem;
 }
+
 .fw-banner-text h1 {
 	color: #fff;
 	margin: 0;
@@ -793,7 +876,7 @@ footer img {
 	margin-top: 5rem;
 }
 
-.contact-us-page .content-cont > h2 {
+.contact-us-page .content-cont>h2 {
 	text-align: center;
 	font-weight: 300;
 }
@@ -841,9 +924,13 @@ footer img {
 	font-size: 26px;
 }
 
-/* END CONTACT US PAGE */
+/*----------------------------
+	End Contact Us Page
+----------------------------*/
 
-/* Single Projects */
+/*----------------------------
+	Single Projects
+----------------------------*/
 article {
 	margin-top: 50px;
 }
@@ -851,9 +938,14 @@ article {
 article h1 {
 	text-align: center;
 }
-/* End Single Projects */
 
-/* Footer menu */
+/*----------------------------
+	End Single Projects
+----------------------------*/
+
+/*----------------------------
+	Footer Menu
+----------------------------*/
 .foot-menu {
 	display: flex;
 	flex-direction: column;
@@ -900,9 +992,14 @@ footer .current-menu-item a {
 .copyright {
 	text-align: center;
 }
-/* End Footer */
 
-/* Forms */
+/*----------------------------
+	End Footer
+----------------------------*/
+
+/*----------------------------
+	Forms
+----------------------------*/
 .wpforms-container.wpforms-container-full {
 	width: 100%;
 }
@@ -927,6 +1024,7 @@ footer .current-menu-item a {
 	background-color: #4681f4;
 	color: #fff;
 }
+
 #wpforms-322 button span {
 	font-family: 'FontAwesome';
 	transition: 0.3s ease-in-out;
@@ -936,11 +1034,27 @@ footer .current-menu-item a {
 	margin-left: 5px;
 }
 
+/*----------------------------
+	Keyframes
+----------------------------*/
+
+@keyframes border_animate {
+	0% {
+		width: 0%;
+	}
+
+	100% {
+		width: 100%;
+	}
+}
+
 @media only screen and (min-width: 410px) {
+
 	/* About Page */
 	.awards a {
 		max-width: 9rem;
 	}
+
 	/* End About Page */
 }
 
@@ -951,25 +1065,30 @@ footer .current-menu-item a {
 }
 
 @media only screen and (min-width: 500px) {
+
 	/* Home Section 1 */
 	.sec1-img {
 		max-width: 60rem;
 		margin: 5rem auto 0;
 	}
+
 	/* End Home Section 1 */
 	/* About Page */
 	.awards a {
 		max-width: 10rem;
 	}
+
 	/* End About Page */
-	/* CONTACT US PAGE */ 
+	/* CONTACT US PAGE */
 	.fw-banner {
 		height: 40vh;
 	}
+
 	/* END CONTACT US PAGE */
 }
 
 @media only screen and (min-width: 600px) {
+
 	/* Home Services */
 	/* .services-home .flex-container {
 		display: flex;
@@ -1001,35 +1120,43 @@ footer .current-menu-item a {
 		grid-template-columns: repeat(2, 1fr);
 		grid-gap: 2rem;
 	}
+
 	.service {
 		width: 100%;
 	}
+
 	.service .bkg-img {
 		height: 20rem;
 	}
+
 	/* About Page */
 	.awards a {
 		max-width: 15rem;
 	}
+
 	/* End About Page */
 }
 
 @media only screen and (min-width: 650px) {
+
 	/* Feature Banner Template */
 	.page-title-bkg {
 		width: 40rem;
 		height: 30rem;
 		line-height: 30rem;
 	}
+
 	.page-title-wrapper {
 		width: 36rem;
 		height: 27rem;
 		line-height: 27rem;
 	}
+
 	/* About Page */
 	.about-sec p {
 		margin: 10rem 5rem;
 	}
+
 	/* End About Page */
 	/* Feature Banner Template */
 	.page-title-wrapper h1 {
@@ -1038,6 +1165,7 @@ footer .current-menu-item a {
 }
 
 @media only screen and (min-width: 690px) {
+
 	/* Home Section 1 */
 	.sec1-img {
 		max-width: 70rem;
@@ -1046,18 +1174,21 @@ footer .current-menu-item a {
 
 @media only screen and (min-width: 700px) {
 	.banner-text {
-		background-color: rgba(0,0,0,0.5);
+		background-color: rgba(0, 0, 0, 0.5);
 		width: calc(100vw - 5rem);
 		padding: 2rem 3rem 2rem 5rem;
 	}
+
 	.banner {
 		height: 60vh;
 		padding-top: 30%;
 	}
+
 	/* Home Section 2 */
 	.sec2-img {
 		height: 40rem;
 	}
+
 	/* End Home Section 2 */
 	/* Contact Us Page */
 	.contact-right {
@@ -1066,17 +1197,21 @@ footer .current-menu-item a {
 		align-items: center;
 		justify-content: space-between;
 	}
+
 	.contact-right img {
 		margin: 0 auto;
 	}
+
 	/* End Contact Us Page */
 }
 
 @media only screen and (min-width: 750px) {
-	/* CONTACT US PAGE */ 
+
+	/* CONTACT US PAGE */
 	.fw-banner {
 		height: 50vh;
 	}
+
 	/* END CONTACT US PAGE */
 }
 
@@ -1084,18 +1219,22 @@ footer .current-menu-item a {
 	.banner-text {
 		width: calc(100vw - 10rem);
 	}
+
 	/* Home Section 1 */
 	.sec1-img {
 		margin: 0 auto;
 	}
+
 	/* End Home Section 1 */
 	/* Home Services */
 	.service .bkg-img {
 		height: 24rem;
 	}
+
 	.services-heading-mobile {
 		display: none;
 	}
+
 	.services-heading-cont {
 		display: block;
 		position: absolute;
@@ -1103,49 +1242,59 @@ footer .current-menu-item a {
 		padding: 0.5rem 0;
 		width: 95%;
 		background-color: var(--white);
-		border-left: 0.1rem solid rgba(0,0,0,0.1);
-		border-bottom: 0.1rem solid rgba(0,0,0,0.1);
+		border-left: 0.1rem solid rgba(0, 0, 0, 0.1);
+		border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
 	}
+
 	.service h3 {
 		text-align: left;
 		margin-left: 1rem;
 	}
+
 	/* End Home Services */
 
 	/* Contact Us Page */
 	.fw-banner-text h1 {
 		margin-left: 3rem;
 	}
+
 	/* End Contact Us Page */
 }
 
 @media only screen and (min-width: 900px) {
+
 	/* Home Services */
 	.services-home .grid-container {
 		max-width: 80rem;
 		margin: 0 auto;
 	}
+
 	.projects-wrapper {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
 	}
+
 	.feature-link {
 		margin: 5rem 0;
 	}
+
 	.feature-link.half {
 		width: 49%;
 	}
+
 	/* End Home Services */
 	.about-sec p {
 		margin: 10rem auto;
 	}
+
 	/* Contact Us Page */
 	.contact-us-page .grid-container {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		grid-gap: 50px;
 	}
+
 	.contact-right {
 		display: block;
 		grid-template-columns: none;
@@ -1153,44 +1302,54 @@ footer .current-menu-item a {
 		margin: initial;
 		padding: initial;
 	}
+
 	.contact-right-wrapper {
 		text-align: left;
 	}
+
 	.contact-right img {
 		max-width: initial;
 		margin: 50px 0 0 0;
 	}
-	/* End Contact Us Page */	
+
+	/* End Contact Us Page */
 }
 
 @media only screen and (min-width: 980px) {
+
 	/* footer menu */
 	footer {
 		margin-top: 10rem;
 	}
+
 	footer .grid-container {
 		display: grid;
 		grid-template-columns: repeat(2, auto);
 		justify-content: space-between;
 	}
+
 	footer img {
 		margin: 0 0 3rem 0;
 	}
+
 	.contact-info a {
 		margin: 1.5rem 0;
 	}
+
 	footer .menu {
 		display: flex;
 		margin: 2.5rem 0;
 	}
+
 	.social-media {
 		justify-content: flex-end;
 	}
+
 	footer .menu li {
 		margin: 0 1rem;
 		position: relative;
 	}
-	
+
 	footer .menu li:hover a:after {
 		content: '';
 		position: absolute;
@@ -1202,42 +1361,51 @@ footer .current-menu-item a {
 		left: 0;
 		right: 0;
 	}
+
 	footer .menu .current-menu-item:hover a:after {
 		content: none;
 	}
+
 	.copyright {
 		text-align: left;
 	}
+
 	/* End Footer */
 	/* About Page */
-	.about-page + footer {
+	.about-page+footer {
 		margin: 0;
 	}
- f	
+
 	/* End About Page */
 }
 
 @media only screen and (min-width: 1000px) {
+
 	/* Shared styles */
 	.post-type-archive-projects main {
 		padding: 0 5rem;
 	}
+
 	/* End shared styles */
 	/* Home Section 2 Styles */
 	.sec2.about-home .grid-container {
 		grid-template-columns: repeat(2, 1fr);
 	}
+
 	.sec2-img {
 		height: inherit;
 	}
+
 	.sec2.about-home {
 		height: 50rem;
 	}
+
 	/* End Home Section 2 Styles */
 	/* Projects Page */
 	.projects-container {
 		margin: 0;
 	}
+
 	/* End Projects Page */
 	/* Feature Banner Template */
 	.page-template-banner {
@@ -1245,6 +1413,7 @@ footer .current-menu-item a {
 		grid-template-columns: repeat(2, auto);
 		grid-gap: 4.5rem;
 	}
+
 	.page-title-bkg {
 		/* reset styles */
 		position: initial;
@@ -1260,13 +1429,16 @@ footer .current-menu-item a {
 		margin-bottom: 10rem;
 		background-color: var(--black);
 	}
+
 	.img-feat-container img:nth-of-type(even) {
 		margin-top: 10rem;
 	}
-	/* CONTACT US PAGE */ 
+
+	/* CONTACT US PAGE */
 	.fw-banner {
 		height: 60vh;
 	}
+
 	/* END CONTACT US PAGE */
 }
 
@@ -1276,10 +1448,19 @@ footer .current-menu-item a {
 	}
 }
 
+@media only screen and (min-width: 1100px) {
+	.recent-projects .grid-container {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 30px;
+	}
+}
+
 @media only screen and (min-width: 1195px) {
 	.menu-icon {
 		display: none;
 	}
+
 	.nav-container {
 		display: grid;
 		grid-template-columns: repeat(2, auto);
@@ -1287,27 +1468,33 @@ footer .current-menu-item a {
 		align-items: center;
 		padding: 1rem;
 	}
+
 	.main-navigation {
 		position: initial;
 		max-height: initial;
 		display: initial;
 	}
+
 	header .menu {
 		width: initial;
 		padding: initial;
 		display: flex;
 	}
+
 	.menu li {
 		margin: 0 1rem;
 		position: relative;
 	}
+
 	header .menu li a {
 		width: initial;
 		border-bottom: none;
 		padding: 1rem;
 		color: var(--gold);
 		text-transform: uppercase;
+		font-weight: 100;
 	}
+
 	header .menu li:hover a:after {
 		content: '';
 		position: absolute;
@@ -1317,74 +1504,92 @@ footer .current-menu-item a {
 		border-bottom: 0.1rem solid var(--gold);
 		margin: 0 auto;
 		left: 0;
-		right: 0;
+		animation: border_animate 0.5s linear forwards;
 	}
+
 	header .menu .current-menu-item:hover a:after {
 		content: none;
 	}
-	.current-menu-item a {
+
+	header .menu li.current-menu-item a {
 		font-weight: bold;
 	}
 }
 
 @media only screen and (min-width: 1200px) {
+
 	/* typography */
 	.banner h1 {
 		font-size: 5.4rem;
 	}
+
 	.banner p {
 		font-size: 2.4rem;
 	}
+
 	h2 {
 		font-size: 3.6rem;
 	}
+
 	.content-cont {
 		margin: 10rem auto;
 		padding: 0 2rem;
 	}
+
 	main section {
 		margin: 5rem 0;
 	}
+
 	.banner {
 		height: calc(100vh - 10rem);
 	}
+
 	/* Home Section 1 */
 	.sec1-text {
 		font-size: 3.6rem;
 	}
+
 	.sec1.intro .grid-container {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		align-items: center;
 	}
+
 	.sec1-img {
 		justify-content: space-between;
 	}
+
 	.sec1-img img:first-child {
 		margin-top: 20rem;
 	}
+
 	.sec1-img img:nth-child(2) {
 		margin-top: 10rem;
 	}
+
 	/* End Home Section 1 */
 	/* Home Section 2 */
 	.sec2.about-home {
 		height: 60vh;
 	}
+
 	/* End Home Section 2 */
 	/* Home Services */
 	.services-home {
 		max-width: 120rem;
 	}
+
 	.services-home .grid-container {
 		grid-template-columns: repeat(4, 1fr);
 		max-width: initial;
 		grid-gap: 1rem;
 	}
+
 	/* Feature Banner Template */
 	.img-feat-container img:nth-of-type(even) {
 		margin-top: 15rem;
 	}
+
 	/* About page */
 	.page-img-feat {
 		display: block;
@@ -1397,44 +1602,54 @@ footer .current-menu-item a {
 		justify-content: space-around;
 		margin-top: 5rem;
 	}
+
 	/* Feature Banner Template */
 	.page-title-wrapper h1 {
 		font-size: 7.2rem;
 	}
+
 	/* PROJECTS PAGE */
-	.feature-image {
+	.projects-wrapper .feature-image {
 		padding: 10rem 0;
 	}
+
 	/* End Projects Page */
 	/* About Page */
 	.about-page .awards {
 		margin-bottom: 5rem;
 	}
+
 	.about-sec {
 		display: flex;
 		align-items: center;
 		margin: 0;
 		height: 100vh;
 	}
+
 	.about-sec:nth-of-type(even) {
 		flex-direction: row-reverse;
 	}
+
 	.about-sec .half-width {
 		width: 50%;
 	}
+
 	.about-sec .half-width.bkg-img {
 		height: inherit;
 		max-width: 100%;
 	}
+
 	.about-sec img {
 		margin: 0 auto;
 		max-width: 30rem;
 		height: auto;
 	}
+
 	.about-sec p {
 		margin: 10rem 5rem;
 		line-height: 4rem;
 	}
+
 	/* End About Page */
 	/* Design Process Page */
 	.process-container {
@@ -1443,36 +1658,45 @@ footer .current-menu-item a {
 		align-items: center;
 		grid-gap: 50px;
 	}
+
 	.design-process {
 		width: 100%;
 	}
+
 	.design-process-images img:first-of-type {
 		margin-bottom: 100px;
 	}
+
 	.our-process-page .form {
 		margin: 0 auto;
 	}
+
 	/* End Design Process Page */
-	/* CONTACT US PAGE */ 
+	/* CONTACT US PAGE */
 	.fw-banner {
 		height: 80vh;
 	}
+
 	/* END CONTACT US PAGE */
 	/* Contact Us Page */
 	.fw-banner-text {
 		padding: 3rem 10rem 3rem 0;
 	}
+
 	.fw-banner-text h1 {
 		font-size: 4.8rem;
 		margin-left: 5rem;
 	}
+
 	.contact-us-page .grid-container {
 		grid-gap: 100px;
 	}
+
 	/* End Contact Us Page */
 }
 
 @media only screen and (min-width: 1242px) {
+
 	.nav-container,
 	.footer-content {
 		padding: 2rem 5rem;
@@ -1483,6 +1707,7 @@ footer .current-menu-item a {
 	.services-home {
 		max-width: 130rem;
 	}
+
 	.services-home .grid-container {
 		grid-gap: 2rem;
 	}
@@ -1492,30 +1717,49 @@ footer .current-menu-item a {
 	.banner {
 		padding-top: 25%;
 	}
+
 	.banner-text {
 		width: 120rem;
 		padding: 5rem 10rem;
 	}
+
 	/* Home Section 2 */
 	.sec2-text {
 		display: flex;
 		justify-content: space-between;
-		align-items: center;;
+		align-items: center;
+		;
 	}
+
 	.sec2-feat-img {
 		display: block;
 	}
+
 	/* End Home Section 2 */
-	/* Feature Banner Template */ 
+	/* Feature Banner Template */
 	.page-title-bkg {
 		width: 50rem;
 		height: 40rem;
 		line-height: 40rem;
 	}
+
 	.page-title-wrapper {
 		width: 45rem;
 		height: 36rem;
 		line-height: 36rem;
+	}
+
+	/* Home Recent Projects */
+	.recent-projects .project-title-bkg {
+		max-width: 37.5rem;
+		height: 29rem;
+		line-height: 29rem;
+	}
+
+	.recent-projects .project-title-wrapper {
+		max-width: 33.75rem;
+		height: 26.1rem;
+		line-height: 26.1rem;
 	}
 }
 
@@ -1523,13 +1767,16 @@ footer .current-menu-item a {
 	.banner {
 		padding-top: 30rem;
 	}
+
 	/* Home Section 2 */
 	.sec2-text {
 		padding: 0 0 0 5rem;
 	}
+
 	.sec2.about-home {
-		height: 100vh;
+		height: 90vh;
 	}
+
 	/* End Home Section 2 */
 }
 
@@ -1537,13 +1784,16 @@ footer .current-menu-item a {
 	.nav-container {
 		padding: 2rem 10rem;
 	}
+
 	.footer-content {
 		padding: 5rem 10rem;
 	}
+
 	/* Shared Styles */
 	.post-type-archive-projects main {
 		padding: 0 14rem;
 	}
+
 	/* Shared Styles */
 	/* PROJECTS PAGE */
 	.feature-image {
@@ -1553,12 +1803,12 @@ footer .current-menu-item a {
 }
 
 @media only screen and (min-width: 1650px) {
-		/* Home Services */
-		/* .services-home .flex-container {
+	/* Home Services */
+	/* .services-home .flex-container {
 			width: 160rem;
 			justify-content: center;
 		} */
-		/* End Home Services */
+	/* End Home Services */
 }
 
 @media only screen and (min-width: 1800px) {

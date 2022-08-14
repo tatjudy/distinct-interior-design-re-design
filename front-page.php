@@ -73,7 +73,7 @@
     <!-- Recent Projects Section -->
     <section class="recent-projects content-cont">
         <h2>Recent Projects</h2>
-        <div class="flex-container">
+        <div class="grid-container">
         <?php
             $new_loop = new WP_Query( array(
             'post_type' => 'Projects',
@@ -84,7 +84,15 @@
         <?php if ( $new_loop->have_posts() ) : ?>
             <?php while ( $new_loop->have_posts() ) : $new_loop->the_post(); ?>
 
-                <h2><?php the_title(); ?></h2>
+            <a href="<?php echo get_permalink();?>" class="feature-link">
+                <div class="feature-image bkg-img" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>');">
+                    <div class="project-title-bkg">
+                        <div class="project-title-wrapper">
+                            <h3><?php the_title(); ?></h3>
+                        </div>
+                    </div>
+                </div>
+            </a>
 
             <?php endwhile;?>
         <?php else: ?>
