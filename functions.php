@@ -146,6 +146,7 @@ add_action( 'widgets_init', 'distinctinteriordesign_widgets_init' );
  * Enqueue scripts and styles.
  */
 function distinctinteriordesign_scripts() {
+	global $post;
 
 	wp_enqueue_style( 'distinctinteriordesign-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_enqueue_style( 'distinctinteriordesign-style', 'https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&family=Playfair+Display&display=swap', false );
@@ -156,6 +157,14 @@ function distinctinteriordesign_scripts() {
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
+	}
+	if (is_front_page()) {
+		wp_enqueue_script( 'distinctinteriordesign-slider', get_template_directory_uri() . '/js/slider.js', array(), _S_VERSION, true );
+		wp_enqueue_script( 'swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js', false );
+		wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css', false);
+	}
+	if (is_post_type_archive('projects') || is_singular('projects')) {
+		wp_enqueue_script( 'distinctinteriordesign-projects', get_template_directory_uri() . '/js/projects.js', array(), _S_VERSION, true );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'distinctinteriordesign_scripts' );

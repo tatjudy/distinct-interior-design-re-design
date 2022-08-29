@@ -414,6 +414,19 @@ header .menu li a {
 	Home Page Styles
 ----------------------------*/
 
+/* Carousel */
+.slides-wrapper {
+	position: relative;
+}
+
+.slide {
+	position: absolute;
+	height: 500px;
+	top: 0;
+	width: 100%;
+}
+
+
 /* Homepage banner styles */
 
 .banner-text {
@@ -1015,7 +1028,6 @@ footer .current-menu-item a {
 
 #wpforms-322 button {
 	display: block;
-	width: 17rem;
 	margin: 0 auto;
 	padding: 1rem 3rem;
 	font-size: 1.8rem;
@@ -1023,15 +1035,6 @@ footer .current-menu-item a {
 	letter-spacing: 0.05rem;
 	background-color: #4681f4;
 	color: #fff;
-}
-
-#wpforms-322 button span {
-	font-family: 'FontAwesome';
-	transition: 0.3s ease-in-out;
-}
-
-#wpforms-322 button:hover span {
-	margin-left: 5px;
 }
 
 /*----------------------------
@@ -1047,6 +1050,77 @@ footer .current-menu-item a {
 		width: 100%;
 	}
 }
+
+@keyframes fadeIn {
+
+	0%,
+	100% {
+		opacity: 0;
+	}
+
+	30%,
+	80% {
+		opacity: 1;
+	}
+}
+
+@-moz-keyframes fadeIn {
+
+	0%,
+	100% {
+		opacity: 0;
+	}
+
+	30%,
+	80% {
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes fadeIn {
+
+	0%,
+	100% {
+		opacity: 0;
+	}
+
+	30%,
+	80% {
+		opacity: 1;
+	}
+}
+
+@-o-keyframes fadeIn {
+
+	0%,
+	100% {
+		opacity: 0;
+	}
+
+	30%,
+	80% {
+		opacity: 1;
+	}
+}
+
+.fade-in {
+	/* opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 1s; */
+	animation: fadeIn 5s linear forwards;
+	animation-delay: 5s;
+	-webkit-animation: fadeIn 5s linear forwards;
+	-moz-animation: fadeIn 5s linear;
+	-moz-animation-delay: 5s;
+	-o-animation: fadeIn 5s linear;
+	-ms-animaation: fadeIn 5s linear;
+}
+
+/*----------------------------
+	Media Queries
+----------------------------*/
 
 @media only screen and (min-width: 410px) {
 
