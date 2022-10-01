@@ -41,20 +41,24 @@
 <!-- Banner Section -->
 <section>
     <section class="carousel">
-        <span class="prev">&lsaquo;</span>
-        <span class="next">&rsaquo;</span>
-        <div class="slides-wrapper">
-        <div class="slide fade-in bkg-img" style="background-image: url('https://judytat.ca/distinct-interior-design/wp-content/uploads/2022/02/windermere-home-feature.jpg');"></div>
-        <div class="slide fade-in bkg-img" style="background-image: url('https://judytat.ca/distinct-interior-design/wp-content/uploads/2022/02/main-floor-reno-feature.jpeg');"></div>
-        <div class="slide fade-in bkg-img" style="background-image: url('https://judytat.ca/distinct-interior-design/wp-content/uploads/2022/03/castle-brook-feature.jpg');"></div>
-        </div>
-    </section>
-    <section class="banner bkg-img" style="background-image: url('<?php echo $bkg_img['url']; ?>');">
+        <!-- <span class="prev">&lsaquo;</span>
+        <span class="next">&rsaquo;</span> -->
         <div class="banner-text">
             <h1><?php echo $banner_heading_text; ?></h1>
             <p><?php echo $banner_paragraph_text; ?></p>
         </div>
+        <div class="slides-wrapper">
+            <div class="slide fade-in bkg-img" style="background-image: url('https://judytat.ca/distinct-interior-design/wp-content/uploads/2022/02/windermere-home-feature.jpg');"></div>
+            <div class="slide fade-in bkg-img" style="background-image: url('https://judytat.ca/distinct-interior-design/wp-content/uploads/2022/02/main-floor-reno-feature.jpeg');"></div>
+            <div class="slide fade-in bkg-img" style="background-image: url('https://judytat.ca/distinct-interior-design/wp-content/uploads/2022/03/castle-brook-feature.jpg');"></div>
+        </div>
     </section>
+    <!-- <section class="banner bkg-img" style="background-image: url('<?php echo $bkg_img['url']; ?>');">
+        <div class="banner-text">
+            <h1><?php //echo $banner_heading_text; ?></h1>
+            <p><?php //echo $banner_paragraph_text; ?></p>
+        </div>
+    </section> -->
 </section>
 <!-- Main Content -->
 <main>
