@@ -1,4 +1,5 @@
 // Slider on Homepage
+/*
 let slides = document.querySelectorAll(".slide");
 let prevBtn = document.querySelector(".prev");
 let nextBtn = document.querySelector(".next");
@@ -34,3 +35,12 @@ prevBtn.addEventListener("click", function (event) {
 nextBtn.addEventListener("click", function (event) {
     plusSlides(1);
 })
+*/
+var counter = 1;
+setInterval(function () {
+    document.getElementById('radio' + counter).checked = true;
+    counter++;
+    if (counter > 4) {
+        counter = 1;
+    }
+}, 5000);
