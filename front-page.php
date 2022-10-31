@@ -140,11 +140,6 @@
             <div class="sec1-text">
                 <h2><span class="gold"><?php echo $sec1_gold; ?></span> <?php echo $sec1_heading_txt; ?></h2>
                 <p><?php echo $sec1_paragraph; ?></p>
-                <div class="cta-link">
-                    <a href="/about/">Book a Consultation
-                        <img src="/distinct-interior-design/wp-content/uploads/2021/12/icon-feather-arrow-right-circle.png" alt="arrow icon gold" />
-                    </a>
-                </div>
             </div>
             <!-- Images -->
             <div class="sec1-img">
@@ -192,11 +187,6 @@
                 <div class="sec2-text-cont">
                     <h2 class="gold"><?php echo $sec2_heading; ?></h2>
                     <p><?php echo $sec2_paragraph; ?></p>
-                    <div class="cta-link">
-                        <a href="/about/">View Our Awards
-                            <img src="/distinct-interior-design/wp-content/uploads/2021/12/icon-feather-arrow-right-circle.png" alt="arrow icon gold" />
-                        </a>
-                    </div>
                 </div>
                 <?php
                     if (!empty($sec2_feat_img)):?>

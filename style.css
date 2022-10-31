@@ -576,7 +576,7 @@ header .menu li a {
 	bottom: 0;
 	margin: auto;
 	z-index: 1;
-	height: fit-content;
+	width: 100%;
 	max-height: 100%;
 	background-color: rgba(0, 0, 0, 0.3);
 	color: var(--white);
@@ -1310,6 +1310,12 @@ footer .current-menu-item a {
 }
 
 @media only screen and (min-width: 600px) {
+	.banner-text {
+		height: fit-content;
+		background-color: rgba(0, 0, 0, 0.5);
+		width: calc(100vw - 5rem);
+		padding: 2rem 3rem 2rem 10rem;
+	}
 
 	/* Home Services */
 	/* .services-home .flex-container {
@@ -1395,11 +1401,6 @@ footer .current-menu-item a {
 }
 
 @media only screen and (min-width: 700px) {
-	.banner-text {
-		background-color: rgba(0, 0, 0, 0.5);
-		width: calc(100vw - 5rem);
-		padding: 2rem 3rem 2rem 10rem;
-	}
 
 	.banner {
 		height: 60vh;
