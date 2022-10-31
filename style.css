@@ -291,6 +291,10 @@ body {
 	color: #333333
 }
 
+.banner-text h1 {
+	font-size: 3.2rem;
+}
+
 .copyright {
 	font-size: 1.2rem;
 }
@@ -454,6 +458,7 @@ header .menu li a {
 }
 
 .slide {
+	position: relative;
 	width: 20%;
 	height: 400px;
 	transition: 2s;
@@ -473,7 +478,7 @@ header .menu li a {
 }
 
 .manual-btn {
-	border: 2px solid #40D3DC;
+	border: 2px solid var(--lightgold);
 	padding: 5px;
 	border-radius: 10px;
 	cursor: pointer;
@@ -485,7 +490,7 @@ header .menu li a {
 }
 
 .manual-btn:hover {
-	background: #40D3DC;
+	background: var(--lightgold);
 }
 
 #radio1:checked~.first {
@@ -519,7 +524,7 @@ header .menu li a {
 }
 
 .navigation-auto div {
-	border: 2px solid #40D3DC;
+	border: 2px solid var(--lightgold);
 	padding: 5px;
 	border-radius: 10px;
 	transition: 1s;
@@ -534,7 +539,7 @@ header .menu li a {
 #radio3:checked~.navigation-auto .auto-btn3,
 #radio4:checked~.navigation-auto .auto-btn4,
 #radio5:checked~.navigation-auto .auto-btn5 {
-	background: #40D3DC;
+	background: var(--lightgold);
 }
 
 @media only screen and (min-width: 700px) {
@@ -555,7 +560,7 @@ header .menu li a {
 	.slider,
 	.slides,
 	.slide {
-		height: calc(90vh - 106px);
+		height: calc(100vh - 106px);
 	}
 
 	.navigation-auto {
@@ -1393,7 +1398,7 @@ footer .current-menu-item a {
 	.banner-text {
 		background-color: rgba(0, 0, 0, 0.5);
 		width: calc(100vw - 5rem);
-		padding: 2rem 3rem 2rem 5rem;
+		padding: 2rem 3rem 2rem 10rem;
 	}
 
 	.banner {
@@ -1434,7 +1439,7 @@ footer .current-menu-item a {
 
 @media only screen and (min-width: 800px) {
 	.banner-text {
-		width: calc(100vw - 10rem);
+		width: 70%;
 	}
 
 	/* Home Section 1 */
@@ -1736,7 +1741,7 @@ footer .current-menu-item a {
 @media only screen and (min-width: 1200px) {
 
 	/* typography */
-	.banner h1 {
+	.banner-text h1 {
 		font-size: 5.4rem;
 	}
 

@@ -42,6 +42,77 @@
 <section>
     <section>
         <div class="slider">
+            <?php
+            $i = 1;
+            $ii = 1;
+            $iii = 1;
+                // Check rows exists.
+                if( have_rows('slider_images') ):?>
+                    <div class="slides">
+                        <?php // Loop through rows.
+                        $numrows = count( get_field( 'slider_images' ) );
+                        while( have_rows('slider_images') ) : the_row();
+                        ?>
+                            <input type="radio" name="radio-btn" id="radio<?php echo $i++ ?>">
+                        <?php
+                        endwhile;
+                        // End Radio Loop
+                        $first_loop = true;
+                        while( have_rows('slider_images') ) : the_row();
+
+                            // Load sub field value.
+                            $slider_image = get_sub_field('slider_image');
+                            $add_heading = get_sub_field('add_heading');
+                            ?>
+                            <div class="slide <?php if ($first_loop):?>first<?php endif; $first_loop = false; ?>" style="background-image: url('<?php echo $slider_image['url']; ?>');">
+                                <?php
+                                    if ($add_heading == 'Yes') :
+                                    // Check rows exists.
+                                        if( have_rows('slider_headings') ):?>
+                                            <?php // Loop through rows.
+                                            while( have_rows('slider_headings') ) : the_row();
+
+                                                // Load sub field value.
+                                                $slider_heading = get_sub_field('slider_heading');
+                                                $slider_subheading = get_sub_field('slider_subheading'); ?>
+                                                <div class="banner-text">
+                                                    <h1><?php echo $slider_heading; ?></h1>
+                                                    <p class="lead"><?php echo $slider_subheading;  ?></p>
+                                                </div>
+                                            <?php // End loop.
+                                                endwhile; ?>
+                                        <?php // No value.
+                                        else :
+                                            // Do something...
+                                        endif;
+                                    ?>
+                                    <?php
+                                    else :
+                                    endif;
+                                ?>
+                            </div> <!-- End Slide -->
+                        <?php 
+                        endwhile; // End Slider Images Loop?>
+                        <!--automatic navigation start-->
+                        <div class="navigation-auto">
+                            <?php while( have_rows('slider_images') ) : the_row();?>
+                                <div class="auto-btn<?php echo $ii++ ?>"></div>
+                            <?php endwhile; ?>
+                        </div> <!--automatic navigation end-->
+                        <!--manual navigation start-->
+                        <div class="navigation-manual">
+                            <?php while( have_rows('slider_images') ) : the_row();?>
+                                <label for="radio<?php echo $iii++ ?>" class="manual-btn"></label>
+                            <?php endwhile; ?>
+                        </div> <!--manual navigation end-->
+                    </div>  <!-- End Slides -->
+                <?php // No value.
+                else :
+                    // Do something...
+                endif;
+            ?>
+        </div> <!-- End Slider -->
+        <div class="slider">
             <div class="slides">
                 <!--radio buttons start-->
                 <input type="radio" name="radio-btn" id="radio1">
