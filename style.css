@@ -1105,6 +1105,34 @@ article h1 {
 ----------------------------*/
 
 /*----------------------------
+	404 Page
+----------------------------*/
+.error-wrapper {
+	position: relative;
+	height: calc(100vh - 105px);
+}
+
+.error-404 {
+	background-image: url('https://judytat.ca/distinct-interior-design/wp-content/gallery/glenora-home/24.jpg');
+}
+
+.error-404 h1,
+.error-404 h3,
+.error-404 p {
+	color: #fff;
+	text-align: center;
+}
+
+.img-overlay {
+	background-color: rgba(0, 0, 0, 0.3);
+	position: absolute;
+}
+
+/*----------------------------
+	End 404 Page
+----------------------------*/
+
+/*----------------------------
 	Footer Menu
 ----------------------------*/
 .foot-menu {

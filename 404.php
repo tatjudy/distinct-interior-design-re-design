@@ -11,11 +11,14 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-		<div class="error-404 error-container not-found">
+		<section class="error-wrapper">
+			<div class="error-404 error-container not-found bkg-img">
 				<h1 class="page-title">404</h1>
 				<h3>PAGE NOT FOUND</h3>
 				<p>Oops! The page you are looking for does not exist. It might have been moved or deleted.</p>
-		</div><!-- .error-404 -->
+			</div><!-- .error-404 -->
+			<div class="img-overlay"></div>
+		</section>
 	</main><!-- #main -->
 
 	
