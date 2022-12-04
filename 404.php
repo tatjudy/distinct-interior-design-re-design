@@ -10,15 +10,15 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
-		<section class="error-wrapper">
-			<div class="error-404 error-container not-found bkg-img">
-				<h1 class="page-title">404</h1>
-				<h3>PAGE NOT FOUND</h3>
+	<main id="error-wrapper" class="site-main">
+		<div class="error-404 error-container not-found bkg-img">
+			<div class="error-text">
+				<h1 class="page-title">404 Page Not Found</h1>
 				<p>Oops! The page you are looking for does not exist. It might have been moved or deleted.</p>
-			</div><!-- .error-404 -->
+				<a href="https://judytat.ca/distinct-interior-design/" class="cta-btn">Home</a>
+			</div>
 			<div class="img-overlay"></div>
-		</section>
+		</div><!-- .error-404 -->
 	</main><!-- #main -->
 
 	
