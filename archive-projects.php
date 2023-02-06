@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying project page
+ * The template for displaying projects archive
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -18,7 +18,7 @@ $projects_heading = get_field('projects_heading', 'option');
             <div class="page-title-wrapper lightgold">
             <?php
                 if(get_field('projects_heading', 'option')) {?>
-                <h1><?php echo $projects_heading; ?></h1>
+                <h1><?php echo $projects_heading; ?> Archive</h1>
             <?php } ?>
             </div>
         </div>

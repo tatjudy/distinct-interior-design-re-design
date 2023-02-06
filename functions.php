@@ -163,7 +163,7 @@ function distinctinteriordesign_scripts() {
 		wp_enqueue_script( 'swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js', false );
 		wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css', false);
 	}
-	if (is_post_type_archive('projects') || is_singular('projects')) {
+	if (is_page(10) || is_singular('projects')) {
 		wp_enqueue_script( 'distinctinteriordesign-projects', get_template_directory_uri() . '/js/projects.js', array(), _S_VERSION, true );
 	}
 }
@@ -267,11 +267,11 @@ function custom_post_type() {
 		),
 		'hierarchical' => true,
 		'public' => true,
-		'has_archive' => true,
+		'rewrite' => array('slug' => 'projects'),
+		'has_archive' => 'projects-archive',
 		'menu_icon' => 'dashicons-portfolio',
 		'supports' => array('title', 'editor', 'thumbnail'),
 	);
-
 	register_post_type('projects', $args);
 }
 

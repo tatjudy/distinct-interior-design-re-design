@@ -1112,8 +1112,25 @@ article h1 {
 
 .error-404 {
 	position: relative;
+	height: 100%;
 	background-image: url('https://judytat.ca/distinct-interior-design/wp-content/gallery/glenora-home/24.jpg');
 	padding: 5%;
+}
+
+.error-text {
+	position: absolute;
+	z-index: 1;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+.error-404 .img-overlay {
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
 }
 
 .error-404 h1 {
@@ -1124,6 +1141,13 @@ article h1 {
 .error-404 p {
 	color: #fff;
 	text-align: center;
+}
+
+.error-404 .cta-btn {
+	background-color: #fff;
+	border: none;
+	font-weight: 400;
+	margin-top: 30px;
 }
 
 .img-overlay {
@@ -1641,6 +1665,7 @@ footer .current-menu-item a {
 @media only screen and (min-width: 1000px) {
 
 	/* Shared styles */
+	.page-template-page-projects main,
 	.post-type-archive-projects main {
 		padding: 0 5rem;
 	}
@@ -1872,6 +1897,12 @@ footer .current-menu-item a {
 		padding: 10rem 0;
 	}
 
+	.projects-nav-next {
+		display: flex;
+		justify-content: flex-end;
+		width: 100%;
+	}
+
 	/* End Projects Page */
 	/* About Page */
 	.about-page .awards {
@@ -2049,6 +2080,7 @@ footer .current-menu-item a {
 	}
 
 	/* Shared Styles */
+	.page-template-page-projects main,
 	.post-type-archive-projects main {
 		padding: 0 14rem;
 	}
